@@ -15,5 +15,5 @@ if (remain == 0)
 }
 else
 {
-    Console.WriteLine ("некратно"+ number1 % number2)
+    Console.WriteLine ("некратно"+ number1 % number2);
 }
