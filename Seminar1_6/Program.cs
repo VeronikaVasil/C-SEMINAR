@@ -1,4 +1,5 @@
-﻿// Write prog 2
+﻿// Write prog 2 //Ввести два числа и проверить является ли второе число кратным первому
+
 Console.WriteLine("Input number1: ");
 
 int number1 = Convert.ToInt32(Console.ReadLine());
