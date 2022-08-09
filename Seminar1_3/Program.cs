@@ -1,39 +1,21 @@
-﻿  class Program
- 
-    {
- 
-        static void Main(string[] args)
- 
+﻿// Вывести третью цифру заданного числа или сообщить, что третьей цифры нет.
+
+Console.Write("Введите число:" );
+ int digitnumber = Convert.ToInt32(Console.ReadLine());
+
+
+
+
+    if (digitnumber < 100)
+
         {
- 
-            int i;
- 
-            Console.Write("Введите число : ");
- 
-            i = int.Parse(Console.ReadLine());
- 
-            if (i % 2 == 0)
- 
-            {
- 
-                Console.Write("Введенное число является четным");
- 
-                Console.Read();
- 
-            }
- 
-            else
- 
-            {
- 
-                Console.Write("Введенное число нечетное");
- 
-                Console.Read();
- 
-            }
- 
+            Console.Write("Третьей цифры нет");
         }
- 
-    }
- 
- 
+
+     else if (digitnumber > 100)
+         
+        {
+            string stringnumber = Convert.ToString(digitnumber);
+            Console.Write("{0} третья цифра", (stringnumber[2]));
+        }
+
