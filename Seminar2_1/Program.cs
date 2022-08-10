@@ -6,6 +6,9 @@ int number = new Random().Next(10,100);
 Console.WriteLine($"Random: {number}"); //Интерполяция
 // camelCase
 int firstDigit = number / 10;
-
 int secondDigit = number % 10;
 
+int maximum = firstDigit; // Пусть max - первое число (количество десятков) 
+if (maximum < secondDigit) maximum = secondDigit;
+
+Console.WriteLine($"Максимальная цифра в числе {numder} - это {maximum}");
