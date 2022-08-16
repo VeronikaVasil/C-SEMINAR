@@ -16,7 +16,7 @@ int GetSumNumbers(int number)
     int start = 1;  //начало нашего цикла
     while (start <= number) //[1;A]
     {
-        sum += start;
+        sum += start;   //sum = sum + start 
         start++;        //start = start + 1
 
     }
