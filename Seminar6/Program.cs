@@ -1,40 +1,23 @@
-﻿int[] array = GetArray(10, 0, 10);
-Console.WriteLine(String.Join(" ", array));
-
-int[] reversArray=CopyArray(array);
-Console.WriteLine(String.Join(" ", reversArray));
-
-ReverseArray(array);
-Console.WriteLine(String.Join(" ", array));
-
-int[] GetArray(int size, int minValue, int maxValue)
+﻿int size = Convert.ToInt32(Console.ReadLine());
+int [] array = new int[size];
+// ЛУЧШЕ выносить размер массива в отдельную переменную
+for (int i = 0; i < size; i++) // size = array.Length
 {
-int[] res = new int[size];
+    array[i] = new Random().Next(11); // [0,10]
+}
+Console.WriteLine($"Array: [ {String.Join("; ", array)} ]");
 
-for (int i = 0; i < size; i++)
+// Способ №1 Создать новый мкссив и записать элементы в обратном порядке
+int lastIndex = size - 1; // Индекс самого последнего элемента в массиве
+int[] resultArray = new int[size];
+for (int i = 0; i < size; i++) 
 {
-    res[i] = new Random().Next(minValue, maxValue + 1); // [0;11) => [0;10]
+    resultArray[i] = array[lastIndex - i]; 
 }
-return res;
-}
-
-void ReverseArray(int[] inArray)
-{
-for (int i = 0; i < inArray.Length / 2; i++)
-{
-int temp = inArray[i];
-inArray[i] = inArray[inArray.Length - i - 1];
-inArray[inArray.Length - i - 1] = temp;
-}
-}
-
-int[] CopyArray(int[] inArray)
-{
-int[] result = new int[inArray.Length];
-for (int i = 0; i < inArray.Length; i++)
-{
-result[i] = inArray[inArray.Length - 1 - i];
-
-}
-return result;
-}
+// array[1,2] -> array[2,1]   // result[i] = array[size-1-i]
+// size = 2 , LastIndex = 1   // result[0] = array[LastIndex-i](i=0)
+// LastIndex = size - 1       // result[0] = array[2-0]
+// result[0] = array[size - 1]// i++
+                              // result[1] = array[2-1]
+Console.WriteLine($"Reverse array: [ {String.Join("; ", resultArray)} ]");
+Console.ReadLine();
