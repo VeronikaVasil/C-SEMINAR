@@ -1,4 +1,5 @@
-﻿Console.Write("Введите число A: ");
+﻿//Число А в степень В циклом for
+Console.Write("Введите число A: ");
 int numberA = Convert.ToInt32(Console.ReadLine());
 
 Console.Write("Введите число B: ");
