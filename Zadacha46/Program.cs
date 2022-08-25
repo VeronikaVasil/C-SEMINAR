@@ -1,13 +1,14 @@
-﻿//
-
+﻿//Задача 46: Задайте двумерный массив размером m×n, 
+// заполненный случайными целыми числами.
+// m = 3, n = 4.
+// 1 4 8 19
+// 5 -2 33 -2
+// 77 3 8 1
 Console.Write("Введите количество строк: ");
-
 int rows = Convert.ToInt32(Console.ReadLine());
-
 Console.Write("Введите количество столбцов: ");
 int columns = Convert.ToInt32(Console.ReadLine());
-// m - строчки, n - столбцы
-int[,]GetArray (int m, int n)
+int[,]GetArray (int m, int n)                    // m - строчки, n - столбцы
 {
    int[,] matrix = new int[m,n];
    for (int i = 0; i < matrix.GetLength(0); i++) // строчки
@@ -15,7 +16,7 @@ int[,]GetArray (int m, int n)
     //j,m,k
     for (int j = 0; j < matrix.GetLength(1); j++) // столбцы
     {
-        matrix[i,j] = new Random().Next(11);
+        matrix[i,j] = new Random().Next(99);
     }
    }
    return matrix;
@@ -32,5 +33,4 @@ void PrintArray (int[,]inputMatrix)
         Console.WriteLine();
     }
 }
-
 PrintArray(result);
